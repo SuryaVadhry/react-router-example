@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import Home from './components/Home';
+import WelcomeScreen from './components/WelcomeScreen.tsx';
 import Dashboard from './components/Dashboard';
 import SignIn from './components/SignIn';
 import PrivateRoute from './components/PrivateRoute';
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <PublicRoute restricted={false} component={Home} path="/" exact />
+          <PublicRoute restricted={false} component={WelcomeScreen} path="/" exact />
           <PublicRoute restricted={true} component={SignIn} path="/signin" exact />
           <PrivateRoute component={Dashboard} path="/dashboard" exact />
         </Switch>
